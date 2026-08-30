@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2학년 2반 시간표 - 사이트 이전 안내</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📘</text></svg>">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+    :root {
+        --paper: #F6F7F5;
+        --ink: #151B18;
+        --ink-soft: #525E58;
+        --ink-faint: #94A29B;
+        --forest-50: #EAF3EE;
+        --forest-100: #D3E6DA;
+        --forest-500: #237A62;
+        --forest-600: #186049;
+        --forest-700: #124A38;
+        --forest-800: #0D392B;
+        --amber-50: #FEF7E9;
+        --amber-500: #CB8215;
+        --amber-600: #A5680F;
+    }
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--paper);
+        font-family: 'Pretendard', -apple-system, system-ui, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+        color: var(--ink);
+        display: flex;
+        justify-content: center;
+        padding: 28px 16px 60px;
+    }
+    .wrap { width: 100%; max-width: 560px; }
+
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--amber-50);
+        color: var(--amber-600);
+        font-size: 12px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 999px;
+        margin-bottom: 16px;
+    }
+    .badge::before { content: "●"; font-size: 8px; }
+
+    h1 {
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0 0 10px;
+        line-height: 1.35;
+    }
+    .lead {
+        color: var(--ink-soft);
+        font-size: 14.5px;
+        line-height: 1.6;
+        margin: 0 0 24px;
+    }
+
+    /* 눈에 띄는 이동 버튼 - 강조 */
+    .cta {
+        display: block;
+        text-decoration: none;
+        background: var(--forest-800);
+        color: #fff;
+        border-radius: 20px;
+        padding: 22px 22px;
+        box-shadow: 0 14px 30px -10px rgba(13, 57, 43, 0.45);
+        margin-bottom: 28px;
+        transition: transform .15s ease, box-shadow .15s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -8px rgba(13, 57, 43, 0.55); }
+    .cta:active { transform: translateY(0px) scale(0.99); }
+    .cta::after {
+        content: "";
+        position: absolute; right: -30px; top: -30px;
+        width: 120px; height: 120px;
+        background: rgba(255,255,255,0.06);
+        border-radius: 999px;
+    }
+    .cta-eyebrow {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #9FD9BE;
+        margin-bottom: 6px;
+    }
+    .cta-title {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .cta-title svg { flex-shrink: 0; transition: transform .15s ease; }
+    .cta:hover .cta-title svg { transform: translateX(4px); }
+    .cta-url {
+        margin-top: 10px;
+        font-size: 12.5px;
+        font-family: ui-monospace, 'IBM Plex Mono', monospace;
+        color: #C8E6D8;
+        word-break: break-all;
+    }
+
+    .card {
+        background: #fff;
+        border: 1px solid var(--forest-100);
+        border-radius: 18px;
+        padding: 22px 22px 20px;
+        box-shadow: 0 2px 10px -4px rgba(21,27,24,0.06);
+    }
+    .card h2 {
+        font-size: 14px;
+        font-weight: 800;
+        margin: 0 0 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--forest-700);
+    }
+    .card h2 .icon-dot {
+        width: 6px; height: 6px; border-radius: 999px;
+        background: var(--forest-500); flex-shrink: 0;
+    }
+    ul.updates {
+        list-style: none;
+        margin: 0 0 18px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+    }
+    ul.updates li {
+        font-size: 13.5px;
+        line-height: 1.55;
+        color: var(--ink);
+        padding-left: 18px;
+        position: relative;
+    }
+    ul.updates li::before {
+        content: "";
+        position: absolute; left: 0; top: 8px;
+        width: 6px; height: 6px;
+        background: var(--forest-500);
+        border-radius: 1px;
+        transform: rotate(45deg);
+    }
+    ul.updates li b { font-weight: 700; }
+    ul.updates li .credit {
+        color: var(--ink-faint);
+        font-size: 12px;
+    }
+
+    .note {
+        background: var(--forest-50);
+        border-radius: 12px;
+        padding: 13px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--forest-700);
+        line-height: 1.55;
+    }
+
+    .footer-note {
+        text-align: center;
+        color: var(--ink-faint);
+        font-size: 11.5px;
+        margin-top: 22px;
+        line-height: 1.6;
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+    <span class="badge">기존 사이트 운영 종료</span>
+    <h1>2학년 2반 시간표 사이트가<br>새 주소로 이사했어요</h1>
+    <p class="lead">이 사이트는 더 이상 업데이트되지 않아요. 아래 새 주소에서 훨씬 좋아진 시간표를 계속 확인할 수 있어요.</p>
+
+    <a class="cta" href="https://gustn0301.github.io/timetable/">
+        <div class="cta-eyebrow">새로운 시간표 사이트</div>
+        <div class="cta-title">
+            지금 바로 이동하기
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </div>
+        <div class="cta-url">gustn0301.github.io/timetable</div>
+    </a>
+
+    <div class="card">
+        <h2><span class="icon-dot"></span>무엇이 달라졌나요</h2>
+        <ul class="updates">
+            <li>시간표 UI 및 기능 업데이트</li>
+            <li>급식 메뉴 리스트 기능 추가 <span class="credit">(by 손희수)</span></li>
+            <li>시간표 오늘만 보기 기능 추가</li>
+            <li>급식 평 추가</li>
+            <li>선택과목 별로 색 추가 <span class="credit">(A~E순대로, 빨주노초파)</span></li>
+            <li>우리반 수업 시간을 두꺼운 윤곽선으로 변경</li>
+            <li>태블릿에서 7교시가 안보이는 오류 해결</li>
+            <li>실시간으로 현재 교시가 적용되지 않는 문제 해결</li>
+            <li>개발 기여자 크레딧 추가</li>
+            <li>앱 형식으로 다운로드 가능하도록 기능 추가</li>
+        </ul>
+        <div class="note">희수 시간표와 같이 통합해서 하기로 해서, 이제부터는 위 새 주소 하나에서 다 보면 돼요!!</div>
+    </div>
+
+    <p class="footer-note">즐겨찾기나 홈 화면에 저장해뒀다면<br>새 주소로 다시 저장해두는 걸 추천해요.</p>
+
+</div>
+</body>
+</html>
